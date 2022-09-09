@@ -1,12 +1,14 @@
+// CODE BY - SATYARTH 
+// I MADE THIS CUI PROJECT TO CREATE STACK USING ARRAY DYNAMICALLY.
 import java.util.Scanner;
 public class StackMenuDrivenProgram {
 	static int stackArray[];
 	static int stackCapacity;
 	static int top;
 	
-	public  StackMenuDrivenProgram(int cap) {
+	public  StackMenuDrivenProgram(int cap) {               //constructor to pass the size of array .i.e. size of stack we want
 		this.stackCapacity=cap;
-		top=-1;
+		top=-1;						// initially the top pointer will be at -1 
 		stackArray=new int[stackCapacity];
 		
 	}
@@ -14,7 +16,7 @@ public class StackMenuDrivenProgram {
 	public static void push() {
 		Scanner sc=new Scanner(System.in);
 		if(isFull()) {
-			// isFull() method will print the empty statement
+			// isFull() method will print the overflow statement
 			return;
 		}
 		else {
@@ -28,6 +30,7 @@ public class StackMenuDrivenProgram {
 //========================= POP METHOD ==================================================	
 	public static void pop() {
 		if(isEmpty()) {
+			// isEmpty() method will print the underflow statement
 			return;	
 		}
 		int del=stackArray[top];
@@ -36,7 +39,7 @@ public class StackMenuDrivenProgram {
 		
 	}
 //========================= IS FULL METHOD ==============================================
-	public static boolean isFull() {
+	public static boolean isFull() {						// condition for overflow => (top == size-1)
 		if(top== stackArray.length-1) {
 			System.out.println("YOUR STACK IS FULL BRO !");
 			return true;
@@ -47,7 +50,7 @@ public class StackMenuDrivenProgram {
 	}
 //========================= IS EMPTY METHOD ==============================================	
 	public static boolean isEmpty() {
-		if(top==-1) {
+		if(top==-1) {								// condition for underflow => (top == -1)
 			System.out.println("YOUR STACK IS EMPTY BRO !");
 			return true;
 		}else {
@@ -56,7 +59,7 @@ public class StackMenuDrivenProgram {
 		}
 	}
 //========================= DISPLAY METHOD ==============================================	
-	public static void display() {
+	public static void display() {							// DISPLAYING STACK FROM TOP TO BOTTOM
 		if(isEmpty()) {
 			
 			return;
@@ -74,6 +77,7 @@ public class StackMenuDrivenProgram {
 		int cap=sc.nextInt();
 		StackMenuDrivenProgram st=new StackMenuDrivenProgram(cap);
 		
+	// MENU DRIVEN INTERFACE:-	
 		while(true) {
 			System.out.println("================ MENU ================");
 			System.out.println("\t    0 : EXIT ");
@@ -104,6 +108,8 @@ public class StackMenuDrivenProgram {
 					
 			}
 		}
+
+		// THANKYOU FOR READING MY ENTIRE CODE :)     LOVE FROM SATYARTH [INDIA]
 		
 		
 		
